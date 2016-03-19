@@ -1,3 +1,4 @@
+
 * Set up gitinfo2
 
 This sets up gitinfo2 so that the git version number and branch are included in any PDFs generated from this document.
@@ -182,6 +183,7 @@ https://lists.gnu.org/archive/html/emacs-orgmode/2013-11/msg00318.html
       '((?C . "\\cite[]{%l}")
 	(?t . "[[textcite:%l][%2a (%y)]]")   ; Author (YYY)
 	(?c . "[[cite:%l][(%2a, %y)]]") ; (Author, YYYY)
+	(?n . "[[nocite:%l][(NOEXPORT %2a, %y)]]") ; (Author, YYYY) but NO EXPORT
 	(?a . ",%l")  ;; add just a link to existing cite
 	))
 
@@ -199,6 +201,13 @@ https://lists.gnu.org/archive/html/emacs-orgmode/2013-11/msg00318.html
    (cond
     ((eq format 'latex) (format "\\autocite{%s}" path))
     ((eq format 'ascii) (format "%s" desc))
+    )))
+(org-add-link-type
+ "nocite"  (lambda (key) (org-open-file cby-references-file t nil key))
+ (lambda (path desc format)
+   (cond
+    ((eq format 'latex) (format "\\nocite{%s}" path))
+    ((eq format 'ascii) (format "" desc))
     )))
 (add-hook 'org-mode-hook
 	  '(lambda ()
