@@ -34,6 +34,11 @@
 # Each product must include full citation information including (where applicable and practicable) names of all authors, date of publication or release, title, title of enclosing work such as journal or book, volume, issue, pages, website and URL or other Persistent Identifier.
 
 # If only publications are included, the heading “Publications” may be used for this section of the Biographical Sketch.
+
+# Hint: can auto-generate reference list w/ LaTeX by:
+[[nocite:CiteKey]]
+\printbibliography[heading=none]
+
    
 ** Synergistic Activities
 
