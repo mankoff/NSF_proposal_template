@@ -1,8 +1,10 @@
 #+SETUPFILE: preamble.org
 
-# ...there is no established page limitation for the references, this section must include bibliographic citations only and must not be used to provide parenthetical information outside of the 15-page Project Description.
 
-* References Instructions 					   :noexport:
+* Instructions							   :noexport:
+
+From the [[GPG.pdf][GPG]]: ...there is no established page limitation for the references, this section must include bibliographic citations only and must not be used to provide parenthetical information outside of the 15-page Project Description.
+
 
 + References should be added to [[Library.bib]] in BibLaTeX format.
 + If you have other BibLaTeX files, you can add as many =\addbibresource{/path/to/file.bib}= lines as you want in [[preamble.org]].
@@ -22,6 +24,7 @@ And then you can update the document to use the local file rather than the globa
 
 * References
 
-# \nocite{*}  # <-- include *everything* in [[Library.bib]].
+# \nocite{*}      <-- include *everything* in [[Library.bib]].
+# nocite:CiteKey  <-- include something in the references but not in the document
 
 \printbibliography[heading=none]

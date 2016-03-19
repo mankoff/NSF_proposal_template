@@ -1,8 +1,8 @@
 #+SETUPFILE: preamble.org
 
-# Definitions from [[GPG.pdf][NSF GPG 2016]]:
+* Instructions							   :noexport:
 
-# A list of all persons in alphabetical order (including their current organizational affiliations) who are currently, or who have been collaborators or co-authors with the individual on a project, book, article, report, abstract or paper during the 48 months preceding the submission of the proposal. Also include those individuals who are currently or have been co-editors of a journal, compendium, or conference proceedings during the 24 months preceding the submission of the proposal. If there are no collaborators or co-editors to report, this should be so indicated.
+Definitions from [[GPG.pdf][NSF GPG 2016]]: A list of all persons in alphabetical order (including their current organizational affiliations) who are currently, or who have been collaborators or co-authors with the individual on a project, book, article, report, abstract or paper during the 48 months preceding the submission of the proposal. Also include those individuals who are currently or have been co-editors of a journal, compendium, or conference proceedings during the 24 months preceding the submission of the proposal. If there are no collaborators or co-editors to report, this should be so indicated.
 
 * About This File 						   :noexport:
 

@@ -1,4 +1,8 @@
 
+* Instructions
+
+This file contains miscellaneous snippets to help set up gitinfo (LaTeX git integration), export instructions for DOC files, quality control scripts, and various Org settings that may or may not be useful.
+
 * Set up gitinfo2
 
 This sets up gitinfo2 so that the git version number and branch are included in any PDFs generated from this document.

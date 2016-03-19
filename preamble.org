@@ -1,3 +1,7 @@
+* About This File
+
+This file should be included in all documents that will exported to LaTeX or DOC by adding =#+SETUPFILE: preamble.org= at the beginning of the file.
+
 * Org Settings
 
 #+AUTHOR: 
