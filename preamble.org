@@ -1,0 +1,146 @@
+* LaTeX Preamble 					      :ignoreheading:
+#+LaTeX_CLASS_OPTIONS: [article,letterpaper,times,draft,12pt]
+** References
+
+#+LATEX_HEADER_EXTRA:%\usepackage[bibstyle=authoryear,firstinits=true,maxbibnames=99]{biblatex}
+#+LATEX_HEADER_EXTRA: \usepackage[hyperref=true,
+#+LATEX_HEADER_EXTRA:             %sorting=none, 
+#+LATEX_HEADER_EXTRA:             sorting=nyt,
+#+LATEX_HEADER_EXTRA:             %style=numeric, 
+#+LATEX_HEADER_EXTRA:             style=authoryear,
+#+LATEX_HEADER_EXTRA:             %defernumbers=true, 
+#+LATEX_HEADER_EXTRA:             firstinits=true, 
+#+LATEX_HEADER_EXTRA:             uniquename=init,
+#+LATEX_HEADER_EXTRA:             %uniquelist=false,
+#+LATEX_HEADER_EXTRA:             uniquelist=minyear,
+#+LATEX_HEADER_EXTRA:             maxnames=99, 
+#+LATEX_HEADER_EXTRA:             maxcitenames=2]{biblatex}
+#+LATEX_HEADER_EXTRA: \addbibresource{Library.bib}
+#+LATEX_HEADER_EXTRA: \renewbibmacro{in:}{}
+
+#+LATEX_HEADER_EXTRA: \renewbibmacro*{journal+issuetitle}{%
+#+LATEX_HEADER_EXTRA: \usebibmacro{journal}%
+#+LATEX_HEADER_EXTRA: \setunit*{\addspace}%
+#+LATEX_HEADER_EXTRA: \iffieldundef{series}
+#+LATEX_HEADER_EXTRA: {}
+#+LATEX_HEADER_EXTRA: {\newunit
+#+LATEX_HEADER_EXTRA: \printfield{series}%
+#+LATEX_HEADER_EXTRA: \setunit{\addspace}}%
+#+LATEX_HEADER_EXTRA: \usebibmacro{issue+date}%
+#+LATEX_HEADER_EXTRA: \setunit{\addcomma\space}%
+#+LATEX_HEADER_EXTRA: \usebibmacro{volume+number+eid}%
+#+LATEX_HEADER_EXTRA: \setunit{\addcolon\space}%
+#+LATEX_HEADER_EXTRA: \usebibmacro{issue}%
+#+LATEX_HEADER_EXTRA: \newunit}
+
+#+LATEX_HEADER_EXTRA: \newbibmacro*{issue+date}{%
+#+LATEX_HEADER_EXTRA: \iffieldundef{issue}
+#+LATEX_HEADER_EXTRA: {. \usebibmacro{date}}
+#+LATEX_HEADER_EXTRA: {\printfield{issue}%
+#+LATEX_HEADER_EXTRA: \setunit*{\addspace}%
+#+LATEX_HEADER_EXTRA: \usebibmacro{date}}%
+#+LATEX_HEADER_EXTRA: \newunit}
+
+#+LATEX_HEADER_EXTRA: \renewbibmacro*{volume+number+eid}{%
+#+LATEX_HEADER_EXTRA: \printfield{volume}%
+#+LATEX_HEADER_EXTRA: \setunit*{\addnbspace}% NEW (optional); there's also #+LATEX_HEADER_EXTRA: \addnbthinspace
+#+LATEX_HEADER_EXTRA: \printfield{number}%
+#+LATEX_HEADER_EXTRA: \setunit{\addcomma\space}%
+#+LATEX_HEADER_EXTRA: \printfield{eid}}
+#+LATEX_HEADER_EXTRA: \DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+
+#+LATEX_HEADER_EXTRA: \DeclareFieldFormat{pages}{#1}
+
+** Page and Fonts
+
+#+LATEX_HEADER_EXTRA: \pdfpagewidth 8.5in
+#+LATEX_HEADER_EXTRA: \pdfpageheight 11in
+#+LATEX_HEADER_EXTRA:  \usepackage{setspace}
+#+LATEX_HEADER_EXTRA:  \usepackage{hyperref} % links (citations, references, URLs, etc.)
+#+LATEX_HEADER_EXTRA:  \usepackage{fixltx2e} % fix some bugs. Require proper coding of equations...
+#+LATEX_HEADER_EXTRA:  \usepackage{enumitem}\setlist{nosep} % shrink space between bullets
+#+LATEX_HEADER_EXTRA:  \usepackage{lmodern}  % better i18n Postscript version of Knuth's cm fonts
+#+LATEX_HEADER_EXTRA:  \usepackage[final,protrusion=true,expansion=true]{microtype} % nice font tweaks
+#+LATEX_HEADER_EXTRA:  \usepackage[small,compact, sf]{titlesec} % reduce space
+#+LATEX_HEADER_EXTRA:  \usepackage[margin=1in]{geometry} % set page margins automatically 
+#+LATEX_HEADER_EXTRA:  \usepackage[parfill]{parskip}  % paragraphs have vert space not indent
+#+LATEX_HEADER_EXTRA:  %\usepackage{paralist} %\begin{compactitem} http://www.howtotex.com/packages/compact-lists-with-paralist
+#+LATEX_HEADER_EXTRA:  \usepackage[T1]{fontenc}
+#+LATEX_HEADER_EXTRA:  \usepackage[sc]{mathpazo} % Palatino font
+#+LATEX_HEADER_EXTRA:  \usepackage{fancyref} % \fref{fig:foo} makes everything pretty...
+#+LATEX_HEADER_EXTRA:  \usepackage{flafter} % make sure figures do not appear before their text:    
+#+LATEX_HEADER_EXTRA:  \usepackage[all]{hypcap} % links from go to top of table/image, not bottom.
+#+LATEX_HEADER_EXTRA:  \usepackage[section]{placeins} % floats get placed in the section
+#+LATEX_HEADER_EXTRA:  \usepackage{siunitx}
+#+LATEX_HEADER_EXTRA:  \usepackage{commath} % \dif, \od, \pd, \md, etc.
+#+LATEX_HEADER_EXTRA:  \usepackage{amsmath} % provides \eqref which adds []'s. 
+#+LATEX_HEADER_EXTRA:  %\numberwithin{equation}{section} % reference equations as [3.42] rather than 42.
+#+LATEX_HEADER_EXTRA:  \usepackage{amsfonts} % I hear these are also good to load
+#+LATEX_HEADER_EXTRA:  \usepackage{amssymb} % I hear these are also good to load
+#+LATEX_HEADER_EXTRA:  \usepackage[all]{onlyamsmath} % don't allow $$, eqnarray, etc.
+#+LATEX_HEADER_EXTRA:  %\usepackage{tocbibind} % add bib to toc
+
+** Code
+#+LATEX_HEADER_EXTRA:  \usepackage[gobble=auto]{pythontex}
+#+LATEX_HEADER_EXTRA:  \setpythontexworkingdir{./}
+#+LATEX_HEADER_EXTRA:  \usepackage{minted}
+#+LATEX_HEADER_EXTRA:  \usemintedstyle{emacs}
+#+LATEX_HEADER_EXTRA:  \newminted{common-lisp}{fontsize=\footnotesize}
+#+LATEX_HEADER_EXTRA: \BeforeBeginEnvironment{minted}{\begin{mdframed}}
+#+LATEX_HEADER_EXTRA: \AfterEndEnvironment{minted}{\end{mdframed}}
+
+
+** Hyperref
+#+LATEX_HEADER_EXTRA:  %\usepackage{datetime}\renewcommand{\dateseparator}{-}
+#+LATEX_HEADER_EXTRA:  \usepackage{xspace} % smart spaces
+#+LATEX_HEADER_EXTRA:  \hypersetup{
+#+LATEX_HEADER_EXTRA:    colorlinks=true,       % links are colored
+#+LATEX_HEADER_EXTRA:    urlcolor=blue,    % color of external links
+#+LATEX_HEADER_EXTRA:    linkcolor=blue,   % color of internal links
+#+LATEX_HEADER_EXTRA:    citecolor=blue,   % color of links to bibliography
+#+LATEX_HEADER_EXTRA:    draft=false, % link even in draft mode
+#+LATEX_HEADER_EXTRA:    bookmarksopen=true, % ?
+#+LATEX_HEADER_EXTRA:    pdfdisplaydoctitle=true}
+#+LATEX_HEADER_EXTRA:  \renewcommand{\textfraction}{0.05}
+#+LATEX_HEADER_EXTRA:  \renewcommand{\topfraction}{0.8}
+#+LATEX_HEADER_EXTRA:  \renewcommand{\bottomfraction}{0.8}
+#+LATEX_HEADER_EXTRA:  \renewcommand{\floatpagefraction}{0.75}
+
+** Figures
+#+LATEX_HEADER_EXTRA:  \usepackage{pdfpages}
+#+LATEX_HEADER_EXTRA:  \usepackage[final]{graphicx} % [final] means show figs in draft mode
+#+LATEX_HEADER_EXTRA:  \setkeys{Gin}{draft=false}
+#+LATEX_HEADER_EXTRA:  %\usepackage{wrapfig}
+#+LATEX_HEADER_EXTRA:  %\usepackage[Export]{adjustbox} % http://latex-alive.tumblr.com/post/81481408449
+#+LATEX_HEADER_EXTRA:  %\adjustboxset{max size={\textwidth}{0.7\textheight}}
+#+LATEX_HEADER_EXTRA:  \usepackage{mdframed}
+
+** Draft Mode
+# DRAFT
+#+LATEX_HEADER_EXTRA:  \usepackage{ifdraft} % used for conditional stuff
+#+LATEX_HEADER_EXTRA:  % \ifdraft{
+#+LATEX_HEADER_EXTRA:  %   \usepackage{draftwatermark}
+#+LATEX_HEADER_EXTRA:  %   \SetWatermarkText{DRAFT}
+#+LATEX_HEADER_EXTRA:  %   \SetWatermarkLightness{0.95}
+#+LATEX_HEADER_EXTRA:  %   \SetWatermarkScale{2}}{}
+#+LATEX_HEADER_EXTRA:  \ifdraft{\usepackage{lineno}\linenumbers\modulolinenumbers[5]}{}
+#+LATEX_HEADER_EXTRA:  \ifdraft{\doublespacing}{}
+#+LATEX_HEADER_EXTRA:  %\ifdraft{\usepackage{showlabels}}{}
+
+** Header/Footer
+# Header/footer
+#+LATEX_HEADER_EXTRA:  \usepackage{lastpage} % used in the footer of fancyheader
+#+LATEX_HEADER_EXTRA:  \usepackage{fancyhdr}
+#+LATEX_HEADER_EXTRA:  \pagestyle{fancyplain}
+#+LATEX_HEADER_EXTRA:  \lhead{}\chead{}\rhead{}
+#+LATEX_HEADER_EXTRA:  \lfoot{}\cfoot{}\rfoot{}
+#+LATEX_HEADER_EXTRA:  \rfoot{p. \thepage\ of \pageref*{LastPage}} % * means no link
+#+LATEX_HEADER_EXTRA:  \ifdraft{\chead{DRAFT -- DO NOT DISTRIBUTE}}{}
+#+LATEX_HEADER_EXTRA:  \renewcommand{\headrulewidth}{0.0pt} % no bars but thanks anyway.
+#+LATEX_HEADER_EXTRA:  \renewcommand{\footrulewidth}{0.0pt} 
+** GitInfo
+#+LATEX_HEADER_EXTRA: \ifdraft{
+#+LATEX_HEADER_EXTRA: \usepackage[mark,missing={master}]{gitinfo2}
+#+LATEX_HEADER_EXTRA: \renewcommand{\gitMark}{\gitBranch\,@\,\gitAbbrevHash{}\gitDirty\,[\gitAuthorDate]}
+#+LATEX_HEADER_EXTRA: }
+

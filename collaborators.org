@@ -1,0 +1,88 @@
+
+#+INCLUDE: preamble.org
+
+# Definitions from [[GPG.pdf][NSF GPG 2016]]:
+
+# A list of all persons in alphabetical order (including their current organizational affiliations) who are currently, or who have been collaborators or co-authors with the individual on a project, book, article, report, abstract or paper during the 48 months preceding the submission of the proposal. Also include those individuals who are currently or have been co-editors of a journal, compendium, or conference proceedings during the 24 months preceding the submission of the proposal. If there are no collaborators or co-editors to report, this should be so indicated.
+
+* About This File 						   :noexport:
+
+This is an Emacs Org file that is used to maintain a list of collaborators for NSF proposals. The file consists of 1. [[*Collaborators][a table]] of collaborators including name, affiliation, note about the collaboration, and date of collaboration, and 2. [[*Export%20Table%20(Code)][Code]] that generates a file, =collaborators.txt=, that is then included in the [[./bio.org]] file.
+
+
+* Setup Buffer							   :noexport:
+
+Time stamps in the table should be formatted YYYY-MM-DD. 
+Press C-c C-c in the following code section to set this up.
+
+#+BEGIN_SRC emacs-lisp
+(make-local-variable 'org-time-stamp-custom-formats)
+(make-local-variable 'org-display-custom-times)
+(setq org-time-stamp-custom-formats '("<%Y-%m>"))
+(setq-default org-display-custom-times t)
+#+END_SRC
+#+RESULTS:
+: t
+
+* Collaborator Table 						   :noexport:
+
+Org table hints: http://orgmode.org/manual/Tables.html
+
+#+TBLNAME:c
+| First   | Last    | Date         | Comment               | Affiliation |
+|---------+---------+--------------+-----------------------+-------------|
+| Some    | Body    | [2014-12-25] | a project             | HERE        |
+| Someone | Else    | [2013-02-28] | that paper            | U. There    |
+| Yet     | Another |              | in progress (no date) | AOEU        |
+
+
+* Collaborators & Co-Editors during preceding 48 months
+
+
+#+BEGIN_SRC python :results output :exports results :var c=c :colnames no
+import numpy as np
+c = np.array(c)
+hdr = c[0,:]  # header
+tab = c[1:,:] # rest of table
+lastidx = np.where(hdr=='Last')[0][0]
+tab = tab[tab[:,lastidx].argsort()] # sort on Last
+f = tab[:,hdr=='First'].flatten()
+l = tab[:,hdr=='Last'].flatten()
+d = tab[:,hdr=='Date'].flatten()
+a = tab[:,hdr=='Affiliation'].flatten()
+
+d[np.where(d=='')] = '[2100-01-01]' # empty dates included
+import dateutil
+# convert date string to datetime objects
+d = np.array([dateutil.parser.parse(dd[1:-1]) for dd in d])
+# cut collaborations > 48 months in the past
+past = datetime.datetime.now() - datetime.timedelta(days=365*4) 
+gd = d > past
+
+# import sys
+# old_stdout = sys.stdout
+# outfile = open("collaborators.txt","w")
+# sys.stdout = outfile # comment this line to see results here
+
+for i,_ in enumerate(l):
+    if d[i] > past:
+        if f[i] != "":
+            print("%s. %s (%s); " % (f[i][0], l[i], a[i]), end="")
+        else:
+            print("%s; " % (l[i]), end="")
+
+# sys.stdout = old_stdout
+# outfile.close()
+#+END_SRC
+#+RESULTS:
+: >>> Y. Another (AOEU); S. Body (HERE); S. Else (U. There); >>> 
+
+Y. Another (AOEU); S. Body (HERE); S. Else (U. There);
+
+** Graduate Advisors and Postdoctoral Sponsors
+
+A. Person (AFFIL); Ph.D. Advisor.; S. Else (AFFIL); Postdoctoral Advisor.
+
+** Thesis Advisor and Postgraduate-Scholar Sponsor
+
+/List Students Here/

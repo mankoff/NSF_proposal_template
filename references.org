@@ -1,0 +1,9 @@
+#+INCLUDE: preamble.org
+
+# ...there is no established page limitation for the references, this section must include bibliographic citations only and must not be used to provide parenthetical information outside of the 15-page Project Description.
+
+* References
+
+# \nocite{*}  # <-- include *everything* in [[Library.bib]].
+
+\printbibliography[heading=none]

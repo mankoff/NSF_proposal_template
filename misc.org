@@ -1,0 +1,288 @@
+
+* Set up gitinfo2
+
+This sets up gitinfo2 so that the git version number and branch are included in any PDFs generated from this document.
+
+#+BEGIN_SRC sh :cmdline -i :results verbatim
+git init
+SRC=~/Documents/templates/gitinfo2.script
+for f in `echo 'commit' 'merge' 'checkout'`; do
+    DEST=./.git/hooks/post-${f}
+    cp $SRC $DEST
+    chmod u+x $DEST
+    echo $SRC $DEST
+done
+#+END_SRC
+#+RESULTS:
+: /Users/mankoff/Documents/templates/gitinfo2.script ./.git/hooks/post-commit
+: /Users/mankoff/Documents/templates/gitinfo2.script ./.git/hooks/post-merge
+: /Users/mankoff/Documents/templates/gitinfo2.script ./.git/hooks/post-checkout
+* Export to DOCX
+1. Export to ODT
+2. Open in LibreOffice and save (headless doesn't work as well)
+3. Search and replace
+   1. \( and \)
+   2. \ref
+   3. $^{ and }$
+   4. \mathrm
+
+#+BEGIN_SRC sh :cmdline -i :results verbatim
+/Users/mankoff/local/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to doc:"MS Word 97" FILE.odt
+#+END_SRC
+#+RESULTS:
+
+** Cleaning up the DOC file
+
+The DOC file produced by Org is imperfect (the \LaTeX file is perfect). The following LibreOffice macro cleans up the DOC file so that it appears much cleaner
+
+#+BEGIN_QUOTE
+Sub ReplaceTeXStrings
+  Dim mTeXStringsNO(99) As String
+  Dim mTeXStringsCNVfrom(99) As String
+  Dim mTexStringsCNVto(99) As String
+  Dim n As Long
+  Dim oDocument As Object
+  Dim oReplace As Object
+
+  mTeXStringsNO() = Array("\(", "\)", "\ref", "\mathrm", _
+  		"\begin{equation}", "\end{equation}", "\left", "\right", _
+  		"\singlespacing", "\doublespacing")
+  		
+  mTeXStringsCNV() = Array("\sigma","σ", "\rho","ρ", "\sum","∑", _
+   "\phi","ɸ", "\partial","∂", "^{th}","th", "^{{th}}","th", _
+   "^{-1}","-1", "^{-2}","-2", "^{2}","^2")
+   		
+  oDocument = ThisComponent
+  oReplace = oDocument.createReplaceDescriptor
+  For n = lbound(mTeXStringsNO()) To ubound(mTeXStringsNO())
+    oReplace.SearchString = mTexStringsNO(n)
+    oReplace.ReplaceString = ""
+    oDocument.replaceAll(oReplace)
+  Next n
+  For n = lbound(mTeXStringsCNV()) To ubound(mTeXStringsCNV()) Step 2
+    oReplace.SearchString = mTexStringsCNV(n)
+    oReplace.ReplaceString = mTexStringsCNV(n+1)
+    oDocument.replaceAll(oReplace)
+  Next n
+  End Sub
+#+END_QUOTE
+* QC
+
+(langtool-check)
+(langtool-correct-buffer)
+(langtool-check-done)
+
+Export as ASCII,
+
+#+BEGIN_SRC emacs-lisp :results none
+(setq org-ascii-text-width 80)
+(org-ascii-export-to-ascii)
+#+END_SRC
+
+Then check w/ scripts:
+
+#+BEGIN_SRC sh :cmdline "-i" :results output
+this='org.txt'
+declare -a cmds=("word_weasel" "word_dupe" "word_passive" "style" "diction -s")
+for cmd in "${cmds[@]}"; do
+    echo "###\n### $cmd\n###"
+    ${cmd} ${this}
+    echo "\n"
+done
+#+END_SRC
+#+RESULTS:
+* Org setup
+The following may help if you use Org, and/or LaTeX and/or ODT export.
+** Default
+** Babel
+*** Enable The following languages
+#+BEGIN_SRC emacs-lisp :results none
+;; code in Org
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)   
+   (python . t)
+   (latex . t)
+   (shell . t)
+   (calc . t)
+   (octave . t)
+   (R . t)
+   (dot . t)
+   (ditaa . t)
+   (C . t)
+   ))
+#+END_SRC
+
+*** Set some prefs
+#+BEGIN_SRC emacs-lisp :results none
+(setq org-adapt-indentation t)
+(setq org-confirm-babel-evaluate nil) ;; don't ask to eval code
+(setq org-src-fontify-natively t)
+(setq org-src-preserve-indentation t)
+(setq org-src-tab-acts-natively nil)
+(setq org-src-strip-leading-and-trailing-blank-lines t)
+(setq org-export-babel-evaluate nil)
+(setq org-latex-listings 'minted)
+(setq org-fontify-quote-and-verse-blocks t)
+(setq org-latex-custom-lang-environments '((python "pyconsole")))
+(setq org-hide-block-startup t)
+#+END_SRC
+*** IPython 
+    #+BEGIN_SRC emacs-lisp :results none
+      (setq org-babel-python-command "ipython --pylab=osx --pdb --nosep --classic --no-banner --no-confirm-exit")
+
+      ;; https://github.com/jorgenschaefer/elpy/issues/191#issuecomment-42474850
+      ;; make IPython work w/ Org
+      (defadvice org-babel-python-evaluate
+        (around org-python-use-cpaste
+                (session body &optional result-type result-params preamble) activate)
+        "Add a %cpaste and '--' to the body, so that ipython does the right thing."
+        ;;(setq body (concat "%cpaste\n" body "\n--"))
+        ;;(setq body (concat "%cpaste -q\n" body "\n--\n"))
+        (setq body (concat "%cpaste -q\n" body "\n--"))
+        ad-do-it
+        (if (stringp ad-return-value)
+            (setq ad-return-value (replace-regexp-in-string "\\(^Pasting code; enter '--' alone on the line to stop or use Ctrl-D\.[\r\n]:*\\)" ""
+                                                            ad-return-value))))
+    #+END_SRC
+
+*** Properly comment babel blocks with M-;
+https://lists.gnu.org/archive/html/emacs-orgmode/2013-11/msg00318.html
+#+BEGIN_SRC emacs-lisp :results none
+    ;; allow comment region in the code edit buffer (according to language)
+    (defun my-org-comment-dwim (&optional arg)
+      (interactive "P")
+      (or (org-babel-do-key-sequence-in-edit-buffer (kbd "M-;"))
+          (comment-dwim arg)))
+
+    ;; make `C-c C-v C-x M-;' more convenient
+    (define-key org-mode-map
+      (kbd "M-;") 'my-org-comment-dwim)
+#+END_SRC
+
+** RefTeX
+
+#+BEGIN_SRC emacs-lisp :results none
+(defun org-mode-reftex-setup ()
+    (load-library "reftex")
+    (and (buffer-file-name)
+         (file-exists-p (buffer-file-name))
+         (reftex-parse-all))
+    (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
+    )
+(add-hook 'org-mode-hook 'org-mode-reftex-setup)
+(add-hook 'org-mode-hook 'reftex-mode)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp :results none
+(define-key global-map (kbd "C-c )") 'reftex-citation)
+(setq reftex-default-bibliography '("/Users/mankoff/Documents/Papers/Library"))
+(setq org-latex-pdf-process (list "/usr/texbin/latexmk -pvc- -g %f"))
+
+(setq reftex-cite-format
+      '((?C . "\\cite[]{%l}")
+	(?t . "[[textcite:%l][%2a (%y)]]")   ; Author (YYY)
+	(?c . "[[cite:%l][(%2a, %y)]]") ; (Author, YYYY)
+	(?a . ",%l")  ;; add just a link to existing cite
+	))
+
+(setq reftex-cite-punctuation '(", " " & " " /et al./"))
+(org-add-link-type
+ "textcite"  (lambda (key) (org-open-file cby-references-file t nil key))
+ (lambda (path desc format)
+   (cond
+    ((eq format 'latex) (format "\\textcite{%s}" path))
+    ((eq format 'ascii) (format "%s" desc))
+    )))
+(org-add-link-type
+ "cite"  (lambda (key) (org-open-file cby-references-file t nil key))
+ (lambda (path desc format)
+   (cond
+    ((eq format 'latex) (format "\\autocite{%s}" path))
+    ((eq format 'ascii) (format "%s" desc))
+    )))
+(add-hook 'org-mode-hook
+	  '(lambda ()
+	     (delete '("\\.pdf\\'" . default) org-file-apps)
+	     (add-to-list 'org-file-apps '("\\.pdf\\'" . "open -a Skim %s"))))
+
+(require 'smart-dnd)
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (smart-dnd-setup
+	     '(
+	       ;;("\\.\\(png\\|gif\\)\\'" . "[[\"%R\"]]\n")
+	       ;;("\\.jpe?g\\'" . "[[\"%R\"]]\n")
+	       (".*" . "[[%F]]\n")
+	       ))))
+
+#+END_SRC
+
+*** COMMENT References to Labels
+
+#+BEGIN_SRC emacs-lisp :results none
+(setq reftex-label-alist
+  '(("equation"   ?e "eq:"  "[[%s]]" nil ("equation"   "eq."))
+  ;;()
+    ))
+
+(org-add-link-type "eq" nil (lambda (path desc format)
+   (cond
+    ((eq format 'latex) (format "\\ref{eq:%s}" path))
+    )))
+#+END_SRC
+
+
+
+
+** Exporting
+*** LaTeX
+#+BEGIN_SRC emacs-lisp :results none
+(require 'ox)
+(setq org-export-latex-classes nil)
+(setq org-ascii-inner-margin 0)
+(setq org-ascii-text-width 10000)
+(setq org-latex-prefer-user-labels t)
+#+END_SRC
+*** ODT
+#+BEGIN_SRC emacs-lisp :results none
+(use-package ox-odt
+  :ensure nil
+  :config (progn
+	    (setq org-odt-preferred-output-format "doc")
+	    (setq org-odt-convert-processes
+		  '(("LibreOffice" "/Users/mankoff/local/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to %f%x %i")))))
+#+END_SRC
+
+*** \clearpage on LaTeX export
+http://permalink.gmane.org/gmane.emacs.orgmode/93971
+#+BEGIN_SRC emacs-lisp :results none
+(defun rasmus/get-org-headline-string-element  (headline backend info)
+  "Return the org element representation of an element.
+
+Won't work on ~verb~/=code=-only headers"
+  (let ((prop-point (next-property-change 0 headline)))
+(if prop-point (plist-get (text-properties-at prop-point headline) :parent))))
+
+(defun rasmus/org-latex-clearpage (headline backend info)
+  "Insert a clearpage at end of heading if property clearpage is non-nil."
+  (when (org-export-derived-backend-p backend 'latex)
+    (let ((elm (rasmus/get-org-headline-string-element headline backend info)))
+      (when (and elm (org-element-property :CLEARPAGE elm))
+	(concat "\\clearpage\\n" headline)))))
+
+(add-to-list 'org-export-filter-headline-functions
+             'rasmus/org-latex-clearpage)
+#+END_SRC
+*** Ignore headings
+
+https://emacs.stackexchange.com/questions/9492/is-it-possible-to-export-content-of-subtrees-without-their-headings
+
+#+BEGIN_SRC emacs-lisp :results none
+  (defun kdm/org-ignore-headline (backend)
+    "Remove headlines with :ignoreheading: tag."
+    (org-map-entries (lambda () (delete-region (point-at-bol) (point-at-eol)))
+                     "ignoreheading"))
+  (add-hook 'org-export-before-processing-hook #'kdm/org-ignore-headline)
+#+END_SRC
+

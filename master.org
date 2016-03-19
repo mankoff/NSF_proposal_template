@@ -1,0 +1,19 @@
+#+INCLUDE: project_description.org
+
+#+INCLUDE: references.org
+
+#+INCLUDE: bio.org
+
+#+INCLUDE: budget.org
+
+#+INCLUDE: facilities.org
+
+# Data Management 1 page
+#+INCLUDE: data_management.org
+
+# Postdoc Mentoring is required if funding requests postdocs MAX 2 pages?
+# #+INCLUDE: postdoc_mentoring.org
+
+# REU Description if requesting REU - 3 page max
+# #+INCLUDE: reu.org
+

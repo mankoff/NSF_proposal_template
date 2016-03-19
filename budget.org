@@ -1,0 +1,40 @@
+#+INCLUDE: preamble.org
+
+# Each proposal must contain a budget for each year of support requested. The budget justification must be no more than three pages per proposal. The amounts for each budget line item requested must be documented and justified in the budget justification as specified below. For proposals that contain a subaward(s), each subaward must include a separate budget justification of no more than three pages.
+
+# The proposal may request funds under any of the categories listed so long as the item and amount are considered necessary, reasonable, allocable, and allowable under 2 CFR § 200, Subpart E, NSF policy, and/or the program solicitation. For-profit entities are subject to the cost principles contained in the Federal Acquisition Regulation, Part 31. Amounts and expenses budgeted also must be consistent with the proposing organization's policies and procedures and cost accounting practices used in accumulating and reporting costs.
+
+
+
+* Budget Justification
+
+** Personnel
+
+** Other Personnel
+
+** Fringe Benefits
+
+Fringe benefits are applied to personnel salaries using the university
+approved rates:
+
+-  Faculty - % in FYs YYYY, YYYY, and YYYY
+
+-  Postdocs - % in FYs YYYY, YYYY, and YYYY
+
+-  Graduate students - % in YYYY, YYYY, and YYYY
+
+-  Undergraduate students - % in FYs YYYY, YYYY, and YYYY
+
+-  Staff - % in FYs YYYY, YYYY, and YYYY
+
+-  Part time staff - % in FYs YYYY, YYYY, and YYYY
+
+** Travel
+*** Domestic
+*** Foregin
+** Other Direct Costs
+
+/Materials and Supplies:/ /Consultant Services:/ /Graduate Student
+Tuition/
+
+** Indirect Costs
