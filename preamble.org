@@ -1,3 +1,15 @@
+* Org Settings
+
+#+AUTHOR: 
+#+DATE:
+
+Enable smart quotes
+#+OPTIONS: ':t
+ 
+Get rid of org-style stuff from our publishing process
+#+OPTIONS: c:nil todo:nil d:nil inline:nil p:nil pri:nil stat:nil tags:nil tasks:nil 
+#+OPTIONS: toc:nil \n:nil @:t ::t |:t ^:{} -:t f:t *:t <:t
+
 * LaTeX Preamble 					      :ignoreheading:
 #+LaTeX_CLASS_OPTIONS: [article,letterpaper,times,draft,12pt]
 ** References
@@ -16,6 +28,7 @@
 #+LATEX_HEADER_EXTRA:             maxnames=99, 
 #+LATEX_HEADER_EXTRA:             maxcitenames=2]{biblatex}
 #+LATEX_HEADER_EXTRA: \addbibresource{Library.bib}
+# #+LATEX_HEADER_EXTRA: \addbibresource{/Users/mankoff/Dropbox/Backup/Library.bib}
 #+LATEX_HEADER_EXTRA: \renewbibmacro{in:}{}
 
 #+LATEX_HEADER_EXTRA: \renewbibmacro*{journal+issuetitle}{%
@@ -123,8 +136,8 @@
 #+LATEX_HEADER_EXTRA:  %   \SetWatermarkText{DRAFT}
 #+LATEX_HEADER_EXTRA:  %   \SetWatermarkLightness{0.95}
 #+LATEX_HEADER_EXTRA:  %   \SetWatermarkScale{2}}{}
-#+LATEX_HEADER_EXTRA:  \ifdraft{\usepackage{lineno}\linenumbers\modulolinenumbers[5]}{}
-#+LATEX_HEADER_EXTRA:  \ifdraft{\doublespacing}{}
+# #+LATEX_HEADER_EXTRA:  \ifdraft{\usepackage{lineno}\linenumbers\modulolinenumbers[5]}{}
+# #+LATEX_HEADER_EXTRA:  \ifdraft{\doublespacing}{}
 #+LATEX_HEADER_EXTRA:  %\ifdraft{\usepackage{showlabels}}{}
 
 ** Header/Footer
