@@ -1,4 +1,3 @@
-
 * Set up gitinfo2
 
 This sets up gitinfo2 so that the git version number and branch are included in any PDFs generated from this document.

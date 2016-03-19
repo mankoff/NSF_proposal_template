@@ -1,4 +1,4 @@
-#+INCLUDE: preamble.org
+#+SETUPFILE: preamble.org
 
 # Any substantial collaboration with individuals not included in the budget should be described in the Facilities, Equipment and Other Resources section of the proposal (see GPG Chapter II.C.2.i) and documented in a letter of collaboration from each collaborator. Such letters should be provided in the supplementary documentation section of the FastLane Proposal Preparation Module and follow the format instructions specified in GPG Chapter II.C.2.j. Collaborative activities that are identified in the budget should follow the instructions in GPG Chapter II.D.
 

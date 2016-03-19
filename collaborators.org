@@ -1,5 +1,4 @@
-
-#+INCLUDE: preamble.org
+#+SETUPFILE: preamble.org
 
 # Definitions from [[GPG.pdf][NSF GPG 2016]]:
 

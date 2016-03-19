@@ -1,4 +1,4 @@
-#+INCLUDE: preamble.org
+#+SETUPFILE: preamble.org
 
 # In FastLane, biographical sketches for senior personnel may no longer be grouped together and uploaded in a single PDF file associated with the PI. Each individual’s biographical sketch must be uploaded as a single PDF file or inserted as text associated with that individual.
 

@@ -1,4 +1,4 @@
-#+INCLUDE: preamble.org
+#+SETUPFILE: preamble.org
 
 * Supplementary Documentation
 

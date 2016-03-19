@@ -1,4 +1,4 @@
-#+INCLUDE: preamble.org
+#+SETUPFILE: preamble.org
 
 # Each proposal must contain a budget for each year of support requested. The budget justification must be no more than three pages per proposal. The amounts for each budget line item requested must be documented and justified in the budget justification as specified below. For proposals that contain a subaward(s), each subaward must include a separate budget justification of no more than three pages.
 
