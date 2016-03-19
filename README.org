@@ -1,31 +1,23 @@
 
 * NSF Proposal Template
 
-An Org template for NSF proposals. Can be used to collaboratively write a proposal in GitHub. Non-technical users can edit files directly within the GitHub web interface, and more technical users can use Git (and Emacs Org Mode).
+An [[http://orgmode.org/][Org]] template for [[https://www.nsf.gov/funding/preparing/][NSF proposals]]. This repository can be forked, made private, and used to collaboratively write a proposal in GitHub. Non-technical users can edit files directly within the GitHub web interface, and more technical users can use [[https://git-scm.com/][git]] and [[http://orgmode.org/][Emacs Org Mode]].
 
 To generate the proposal:
 
-1. Edit the Org files as desired. Instructions (from the [[GPG.pdf][GPG]]) are embedded as comments
-2. Export each file to a DOC file or LaTeX file as you and your admins prefer.
-
-If you are collaborating with people who prefer MS Word, I've found that Org -> DOC gives better results than Org -> LaTeX export -> DOC (via pandoc).
+1. Edit the Org files as required by the [[GPG.pdf][GPG]].
+2. [[http://orgmode.org/manual/Exporting.html][Export]] each file to a DOC file or LaTeX file as you and your admins prefer.
 
 * Contents
 
-Comments about each file are embedded in them. Comments are not visible in GitHub web views until you edit or view the raw file.
-  
-+ [[preamble.org]]: LaTeX setup code here (in Org format). =#+INCLUDE='d in other files
 + [[summary.org]]: Project summary
 + [[project.org]]: Project Description (15 pages)
 + [[references.org]]: References Cited
   + [[Library.bib]]: BibTeX file of references
 + [[bio.org]]: Biographical Sketch
++ [[collaborators.org]]: List of collaborators (can be auto-generated)
 + [[budget.org]]: Budget Justification
 + [[facilities.org]]: Facilities, Equipment and Other Resources
 + [[data_management.org]]: Data Management
 + [[postdoc_mentoring.org]]: Post-Doctoral Mentoring
-
-* Collaborator List
-
-This NSF template includes an easy way to generate a collaborator list. [[collaborators.org]] is an Emacs Org file that allows you to maintain a table of collaborators including their name, affiliation, a note about the "project, book, article, report, abstract or paper" where the collaboration occurred, and importantly the final date of that collaboration. Code embedded in that document produces the alphabetized list of collaborators from the past 48 months.
-
++ [[preamble.org]]: LaTeX setup code here (in Org format). =#+INCLUDE='d in other files
