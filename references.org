@@ -5,13 +5,13 @@
 * References Instructions 					   :noexport:
 
 + References should be added to [[Library.bib]] in BibLaTeX format.
-+ If you have other BibLaTeX files, you can add as many `\addbibresource{/path/to/file.bib}` lines as you want in [[preamble.org]].
-+ References should be automatically generated in LaTeX anywhere you add a `\printbibliography` line.
++ If you have other BibLaTeX files, you can add as many =\addbibresource{/path/to/file.bib}= lines as you want in [[preamble.org]].
++ References should be automatically generated in LaTeX anywhere you add a =\printbibliography= line.
 + If you are going to generate a DOC file, there are a few options:
   + Manually curate the list (Hint: inserting the =(Author(s), YYYY)= text into the Org document can still be done using RefTeX.)
   + Generate a PDF and then cut-and-paste the references into the DOC
-  + Export a tex file from Org, and then use pandoc: `pandoc -f latex -t docx -o FILE.docx --bibliography ./FILE.bib FILE.tex`. Note that FILE.bib may crash pandoc if it is too large or contains certain characters. To get around this, create a local subset BibLaTeX file (see below).
-+ If you want to generate a subset BibLaTeX file for this project from a master `bib` file, you can do so with one of the following commands. Presumable you've generated a LaTeX file with `cite`, `autocite`, or `nocite` commands based on a global file, then:
+  + Export a tex file from Org, and then use pandoc: =pandoc -f latex -t docx -o FILE.docx --bibliography ./FILE.bib FILE.tex=. Note that FILE.bib may crash pandoc if it is too large or contains certain characters. To get around this, create a local subset BibLaTeX file (see below).
++ If you want to generate a subset BibLaTeX file for this project from a master =bib= file, you can do so with one of the following commands. Presumable you've generated a LaTeX file with =cite=, =autocite=, or =nocite= commands based on a global file, then:
 
 #+BEGIN_SRC sh :cmdline -i :results verbatim :exports code
 bibexport <file.aux>                           # if you have an aux file from bibtex
