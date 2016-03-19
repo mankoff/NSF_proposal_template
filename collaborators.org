@@ -6,7 +6,7 @@ Definitions from [[GPG.pdf][NSF GPG 2016]]: A list of all persons in alphabetica
 
 * About This File 						   :noexport:
 
-This is an Emacs Org file that is used to maintain a list of collaborators for NSF proposals. The file consists of 1. [[*Collaborators][a table]] of collaborators including name, affiliation, note about the collaboration, and date of collaboration, and 2. [[*Export%20Table%20(Code)][Code]] that generates a file, =collaborators.txt=, that is then included in the [[./bio.org]] file.
+This is an Emacs Org file that is used to maintain a list of collaborators for NSF proposals. The file consists of 1. [[*Collaborators][a table]] of collaborators including name, affiliation, note about the collaboration, and date of last collaboration, and 2. [[*Export%20Table%20(Code)][Code]] that generates an alphabetical list of all collabortors within the past 48 months.
 
 
 * Setup Buffer							   :noexport:
@@ -73,13 +73,12 @@ for i,_ in enumerate(l):
 # outfile.close()
 #+END_SRC
 #+RESULTS:
-: >>> Y. Another (AOEU); S. Body (HERE); S. Else (U. There); >>> 
-
-Y. Another (AOEU); S. Body (HERE); S. Else (U. There);
+>>> Y. Another (AOEU); S. Body (HERE); S. Else (U. There); >>> 
 
 ** Graduate Advisors and Postdoctoral Sponsors
 
-A. Person (AFFIL); Ph.D. Advisor.; S. Else (AFFIL); Postdoctoral Advisor.
++ Ph.D. advisor: A. Person (AFFIL)
++ Post-doctoral advisor(s): S. Else (AFFIL)
 
 ** Thesis Advisor and Postgraduate-Scholar Sponsor
 
