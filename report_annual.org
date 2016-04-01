@@ -1,0 +1,168 @@
+#+SETUPFILE: preamble.org
+
+* Instructions							   :noexport:
+
+Annual reports are due in the 90 day window before the end of each year of a project, except the last year, when the [[./report_outcomes][outcome report]] and [[./report_final.org][final report]] are due. Reports must be submitted through http://research.gov. 
+
+* Accomplishments
+
+** What are the major goals of the project?
+# 8000 characters
+
+** What was accomplished under these goals (you must provide information for at least one of the 4 categories below)?  more information about what was accomplished under these goals
+
+*** Major Activities:
+# 8000 characters
+
+*** Specific Objectives
+# 8000 characters
+
+*** Significant results:
+# 8000 characters
+
+*** Key outcomes or Other achievements:
+# 8000 characters
+
+** What opportunities for training and professional development has the project provided?
+# 8000 characters
+
+** How have the results been disseminated to communities of interest?
+# 8000 characters
+
+** What do you plan to do during the next reporting period to accomplish the goals?
+# 8000 characters
+
+
+* Products
+
+** Instructions							   :noexport:
+
+You and your institution are responsible for assuring that any publication including World Wide Web pages developed under or based on NSF support of your project includes an acknowledgment of that support in the following terms:
+
+"This material is based upon work supported by the National Science Foundation under Grant Number (NSF Grant Number)"
+
+You and your institution are also responsible for assuring that every publication of material (including World Wide Web pages) based on or developed under award, (other than a scientific article or paper appearing in a scientific, technical, or professional journal), contains the following disclaimer:
+
+"Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation."
+
+** What has the project produced?
+* Participants / Organizations
+** What individuals have worked on the project?
+# Fill in hours worked
+** What other organizations have been involved as partners?
+** What other collaborators or contacts have been involved?
+# 2000 characters
+* Impact
+** Instructions							   :noexport:
+
+What is the impact of the project? How has it contributed?
+
+This component will be used to describe ways in which the work, findings, and specific products of the project have had an impact during this reporting period.
+For NSF purposes, include, where appropriate, discussion of data resources and the acquisition of data skills. Include the emergence of new career paths, such as data scientists, or new disciplines. If there is nothing significant to report during this reporting period, please check "Nothing to Report" if applicable.
+more information about other collaborators or contacts
+
+** What is the impact on the development of the principal discipline(s) of the project? 
+# 8000 characters
+
+Describe how findings, results, techniques that were developed or extended, or other products from the project made an impact or are likely to make an impact on the base of knowledge, theory, and research and/or pedagogical methods in the principal disciplinary field(s) of the project.
+
+** What is the impact on other disciplines?
+
+Describe how the findings, results, or techniques that were developed or improved, or other products from the project made an impact or are likely to make an impact on other disciplines.
+
+** What is the impact on the development of human resources?
+
+Describe how the project made an impact or is likely to make an impact on human resource development in science, engineering, and technology.
+
+For example, how has the project:
++ provided opportunities for research and teaching in the relevant
+  fields;
++ improved the performance, skills, or attitudes of members of
+  underrepresented groups that will improve their access to or
+  retention in research, teaching, or other related professions;
++ developed and disseminated new educational materials or provided
+  scholarships; or
++ provided exposure to science and technology for practitioners,
+  teachers, young people, or other members of the public?
+
+For NSF purposes, the first bullet above should read "provided opportunities for research, teaching and mentoring in science and engineering areas."
+
+** What is the impact on physical resources that form infrastructure?
+
+Describe ways, if any, in which the project made an impact, or is likely to make an impact, on physical resources that form infrastructure, Including physical resources such as facilities, laboratories, or instruments.
+
+** What is the impact on institutional resources that form infrastructure?
+
+Describe ways, if any, in which the project made an impact, or is likely to make an impact, on institutional resources that form infrastructure, including: institutional resources (such as establishment or sustenance of societies or organizations)
+
+For NSF purposes, the institutional resources parenthetical language should read: (such as policies, practices, programs, or establishment or sustenance of societies or organizations); and information resources should include data services and preservation.
+
+** What is the impact on information resources that form infrastructure?
+
+Describe ways, if any, in which the project made an impact, or is likely to make an impact, on information resources that form infrastructure, including:
++ information resources, electronic means for accessing such resources
+  or for scientific communication, or the like.
+For NSF purposes, the institutional resources parenthetical language should read: (such as policies, practices, programs, or establishment or sustenance of societies or organizations); and information resources should include data services and preservation.
+
+** What is the impact on technology transfer?
+
+Describe ways in which the project made an impact, or is likely to make an impact, on commercial technology or public use.
+
+Including:
++ transfer of results to entities in government or industry;
++ instances where the research has led to the initiation of a start-up
+  company; or
++ adoption of new practices.
+
+** What is the impact on society beyond science and technology?
+
+Describe how results from the project made an impact, or are likely to make an impact, beyond the bounds of science, engineering, and the academic world.
+
+For example, in areas such as:
++ improving public knowledge, attitudes, skills, and abilities;
++ changing behavior, practices, decision making, policies (including
+  regulatory policies), or social actions; or
++ improving social, economic, civic, or environmental conditions.
+
+* Changes / Problems
+
+** Instructions							   :noexport:
+
+The PI is reminded that the grantee is required to obtain prior written approval from the awarding agency grants official whenever there are significant changes in the project or its direction. See agency specific instructions for submission of these requests.
+
+If not previously reported in writing to the agency through other mechanisms, provide the following additional information or state, "Nothing to Report", if applicable:
+
+Notifications and Request
+
+For more information on Grantee Notifications to and Requests for approval from the National Science Foundation, please visit the Notifications and Requests section in FastLane or refer to Exhibit II-1 of the Award and Administration Guide (AAG).
+
+** Changes in approach and reasons for change
+
+Describe any changes in approach during the reporting period and reasons for these changes. Remember that significant changes in objectives and scope require prior approval of the agency.
+
+
+** Actual or Anticipated problems or delays and actions or plans to resolve them
+Describe problems or delays encountered during the reporting period and actions or plans to resolve them.
+
+** Changes that have significant impact on expenditures
+
+Describe changes during the reporting period that may have a significant impact on expenditures, for example, delays in hiring staff or favorable developments that enable meeting objectives at less cost than anticipated.
+
+** Significant changes in use or care of human subjects 
+
+Describe significant deviations, unexpected outcomes, or changes in approved protocols for the use or care of human subjects during the reporting period. If required, were these changes approved by the applicable institution committee and reported to the agency? Also specify the applicable Institutional Review Board/Institutional Animal Care and Use Committee approval dates.
+
+
+** Significant changes in use or care of vertebrate animals
+
+Describe significant deviations, unexpected outcomes, or changes in approved protocols for the use or care of vertebrate animals during the reporting period. If required, were these changes approved by the applicable institution committee and reported to the agency? Also specify the applicable Institutional Review Board/Institutional Animal Care and Use Committee approval dates.
+
+
+** Significant changes in use or care of biohazards
+
+Describe significant deviations, unexpected outcomes, or changes in approved protocols for the use or care of biohazards during the reporting period. If required, were these changes approved by the applicable institution committee and reported to the agency? Also specify the applicable Institutional Review Board/Institutional Animal Care and Use Committee approval dates.
+
+
+* Special Requirements
+
+Respond to any special reporting requirements specified in the award terms and conditions, as well as any award specific reporting requirements.
