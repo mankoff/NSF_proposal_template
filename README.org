@@ -1,7 +1,7 @@
 
 * NSF Proposal Template
 
-An [[http://orgmode.org/][Org]] template for [[https://www.nsf.gov/funding/preparing/][NSF proposals]]. This repository can be forked, made private, and used to collaboratively write a proposal in GitHub. Non-technical users can edit files directly within the GitHub web interface, and more technical users can use [[https://git-scm.com/][git]] and [[http://orgmode.org/][Emacs Org Mode]].
+An [[http://orgmode.org/][Org]] template for [[https://www.nsf.gov/funding/preparing/][NSF proposals]] that follows the [[https://www.nsf.gov/pubs/policydocs/pappguide/nsf16001/gpg_index.jsp][GPG 16]] guidelines. This repository can be forked, made private, and used to collaboratively write a proposal in GitHub. Non-technical users can edit files directly within the GitHub web interface, and more technical users can use [[https://git-scm.com/][git]] and [[http://orgmode.org/][Emacs Org Mode]].
 
 To generate the proposal:
 
