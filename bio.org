@@ -1,18 +1,14 @@
 #+SETUPFILE: preamble.org
 
-* What's New							   :noexport:
-
-GPG 16 appears to suggest that the collaborator list is no longer part of the [[bio.org][bio sketch]] (see http://www.nsf.gov/pubs/policydocs/pappguide/nsf16001/gpg_2.jsp#IIC1e ).
-
-* Instructions 							   :noexport:
+* Instructions                                                     :noexport:
 
 In FastLane, biographical sketches for senior personnel may no longer be grouped together and uploaded in a single PDF file associated with the PI. Each individual’s biographical sketch must be uploaded as a single PDF file or inserted as text associated with that individual.
 
-NOTE: Bio sketches for "Other Personnel" may be included for post-docs, other professionsal, and student research assistants. See [[GPG.pdf]]. Equipment proposals must provide bio sketches for each auxiliary user, w/ publication list. See GPG.pdf.
+NOTE: Bio sketches for "Other Personnel" may be included for post-docs, other professionsal, and student research assistants. See [[PAPPG.pdf]]. Equipment proposals must provide bio sketches for each auxiliary user, w/ publication list.
 
-A biographical sketch (limited to two pages) is required for each individual identified as senior personnel. (See GPG Exhibit II-7 for the definitions of Senior Personnel.) Proposers may elect to use third-party solutions, such as NIH’s SciENcv to develop and maintain their biographical sketch. However, proposers are advised that they are still responsible for ensuring that biographical sketches created using third-party solutions are compliant with NSF proposal preparation requirements.
+A biographical sketch (limited to two pages) is required for each individual identified as senior personnel. (See PAPPG for the definitions of Senior Personnel.) Proposers may elect to use third-party solutions, such as NIH’s SciENcv to develop and maintain their biographical sketch. However, proposers are advised that they are still responsible for ensuring that biographical sketches created using third-party solutions are compliant with NSF proposal preparation requirements.
 
- The following information must be provided in the order and format specified below. Inclusion of additional information beyond that specified below may result in the proposal being returned without review.
+The following information must be provided in the order and format specified below. Inclusion of additional information beyond that specified below may result in the proposal being returned without review.
 
 * Biographical Sketch: Your Name
 

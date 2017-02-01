@@ -1,11 +1,12 @@
 
 * NSF Proposal Template
 
-An [[http://orgmode.org/][Org]] template for [[https://www.nsf.gov/funding/preparing/][NSF proposals]] that follows the [[https://www.nsf.gov/pubs/policydocs/pappguide/nsf16001/gpg_index.jsp][GPG 16]] guidelines. This repository can be forked, made private, and used to collaboratively write a proposal in GitHub. Non-technical users can edit files directly within the GitHub web interface, and more technical users can use [[https://git-scm.com/][git]] and [[http://orgmode.org/][Emacs Org Mode]].
+An [[http://orgmode.org/][Org]] template for [[https://www.nsf.gov/funding/preparing/][NSF proposals]] that follows the [[https://www.nsf.gov/pubs/policydocs/pappg17_1/][PAPPG 17-1]] guidelines. This repository can be forked, made private, and used to collaboratively write a proposal in GitHub. Non-technical users can edit files directly within the GitHub web interface, and more technical users can use [[https://git-scm.com/][git]] and [[http://orgmode.org/][Emacs Org Mode]].
 
 To generate the proposal:
 
-1. Edit the Org files as required by the Grant Proposal Guide ([[GPG.pdf][PDF]], [[https://www.nsf.gov/pubs/policydocs/pappguide/nsf16001/gpg_index.jsp][HTML]]).
+1. Edit the Org files as required by the  Proposal & Award
+Policies & Procedures Guide ([[PAPPG.pdf][PDF]], [[https://www.nsf.gov/pubs/policydocs/pappg17_1/][HTML]]).
 2. [[http://orgmode.org/manual/Exporting.html][Export]] each file to a DOC file or LaTeX file as you and your admins prefer.
 
 * Contents

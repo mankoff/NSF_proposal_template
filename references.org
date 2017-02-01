@@ -3,8 +3,7 @@
 
 * Instructions							   :noexport:
 
-From the [[GPG.pdf][GPG]]: ...there is no established page limitation for the references, this section must include bibliographic citations only and must not be used to provide parenthetical information outside of the 15-page Project Description.
-
+https://www.nsf.gov/pubs/policydocs/pappg17_1/pappg_2.jsp#IIC2e
 
 + References should be added to [[Library.bib]] in BibLaTeX format.
 + If you have other BibLaTeX files, you can add as many =\addbibresource{/path/to/file.bib}= lines as you want in [[preamble.org]].

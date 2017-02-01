@@ -2,7 +2,7 @@
 
 * Instructions							   :noexport:
 
-Definitions from [[GPG.pdf][NSF GPG 2016]]: A list of all persons in alphabetical order (including their current organizational affiliations) who are currently, or who have been collaborators or co-authors with the individual on a project, book, article, report, abstract or paper during the 48 months preceding the submission of the proposal. Also include those individuals who are currently or have been co-editors of a journal, compendium, or conference proceedings during the 24 months preceding the submission of the proposal. If there are no collaborators or co-editors to report, this should be so indicated.
+Definitions from [[PAPPG.pdf][NSF PAPPG]]: A list of all persons in alphabetical order (including their current organizational affiliations) who are currently, or who have been collaborators or co-authors with the individual on a project, book, article, report, abstract or paper during the 48 months preceding the submission of the proposal. Also include those individuals who are currently or have been co-editors of a journal, compendium, or conference proceedings during the 24 months preceding the submission of the proposal. If there are no collaborators or co-editors to report, this should be so indicated.
 
 * About This File 						   :noexport:
 
@@ -29,11 +29,11 @@ Press C-c C-c in the following code section to set this up.
 Org table hints: http://orgmode.org/manual/Tables.html
 
 #+TBLNAME:c
-| First   | Last    | Date         | Comment               | Affiliation |
-|---------+---------+--------------+-----------------------+-------------|
+| First   | Last    | Date             | Comment               | Affiliation |
+|---------+---------+------------------+-----------------------+-------------|
 | Some    | Body    | [2014-12-25 Thu] | a project             | HERE        |
 | Someone | Else    | [2013-02-28 Thu] | that paper            | U. There    |
-| Yet     | Another |              | in progress (no date) | AOEU        |
+| Yet     | Another |                  | in progress (no date) | AOEU        |
 
 
 * Collaborators & Co-Editors during preceding 48 months
@@ -76,11 +76,12 @@ for i,_ in enumerate(l):
 #+RESULTS:
 >>> Y. Another (AOEU); S. Body (HERE); S. Else (U. There); >>> 
 
-** Graduate Advisors and Postdoctoral Sponsors
+** Graduate Advisors
 
-+ Ph.D. advisor: A. Person (AFFIL)
-+ Post-doctoral advisor(s): S. Else (AFFIL)
+# A list of the names in alphabetical order by last name of the individual’s own graduate advisor(s) and their current organizational affiliations, if known.
 
-** Thesis Advisor and Postgraduate-Scholar Sponsor
++ A. Person (AFFIL), B. Someone (OTHER)
+
+** Ph.D. Advisor
 
 /List Students Here/
