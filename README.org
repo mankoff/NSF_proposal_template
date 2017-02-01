@@ -5,8 +5,7 @@ An [[http://orgmode.org/][Org]] template for [[https://www.nsf.gov/funding/prepa
 
 To generate the proposal:
 
-1. Edit the Org files as required by the  Proposal & Award
-Policies & Procedures Guide ([[PAPPG.pdf][PDF]], [[https://www.nsf.gov/pubs/policydocs/pappg17_1/][HTML]]).
+1. Edit the Org files as required by the  Proposal & Award Policies & Procedures Guide ([[PAPPG.pdf][PDF]], [[https://www.nsf.gov/pubs/policydocs/pappg17_1/][HTML]]).
 2. [[http://orgmode.org/manual/Exporting.html][Export]] each file to a DOC file or LaTeX file as you and your admins prefer.
 
 * Contents
